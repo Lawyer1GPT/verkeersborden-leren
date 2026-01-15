@@ -1,0 +1,40 @@
+═══════════════════════════════════════════════════════
+🚦 VERKEERSBORDEN APP - LINK VOOR FILIP
+═══════════════════════════════════════════════════════
+
+📅 2026-01-15 | ✅ WERKT OVERAL (via Tailscale)
+
+═══════════════════════════════════════════════════════
+
+📱 LINK VOOR FILIP:
+
+http://100.96.188.90:8888/mobile.html
+
+═══════════════════════════════════════════════════════
+
+📋 SERVER AL GESTART ✅
+   - Draait op poort 8888
+   - Tailscale IP: 100.96.188.90
+   - Naam: spark-d12f (DGX1)
+
+═══════════════════════════════════════════════════════
+
+✅ FILIP MOET:
+   1. Tailscale app installeren (App Store)
+   2. Inloggen (zelfde account als Marcin)
+   3. Link openen in Safari
+   4. Klaar! 🎉
+
+═══════════════════════════════════════════════════════
+
+📱 LINK: http://100.96.188.90:8888/mobile.html
+
+Copy deze link en stuur via WhatsApp/Signal!
+
+═══════════════════════════════════════════════════════
+
+🎓 35 OFFICIËLE VERKEERSBORDEN
+⚖️ RVV 2026 GECERTIFICEERD
+🌍 WERKT OVERAL TER WERELD
+
+═══════════════════════════════════════════════════════
