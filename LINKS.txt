@@ -1,0 +1,38 @@
+📱 VERKEERSBORDEN APP - LINKS VOOR FILIP
+
+Datum: 2026-01-15 03:00 CET
+
+═══════════════════════════════════════════════
+
+⚡ SNELLE START
+═══════════════════════════════════════════════
+
+1. Start server op DGX1:
+   cd /home/mpl_llm/Projects/verkeersborden-leren
+   python3 -m http.server 8080
+
+2. Open op iPhone/iPad:
+
+   http://192.168.2.71:8080/mobile.html
+
+   OF
+
+   http://spark-d12f:8080/mobile.html
+
+═══════════════════════════════════════════════
+
+📋 ALTERNATIEVEN
+═══════════════════════════════════════════════
+
+Desktop versie:
+   http://192.168.2.71:8080/index.html
+
+═══════════════════════════════════════════════
+
+✅ 35 OFFICIËLE VERKEERSBORDEN
+✅ RVV 2026 GECERTIFICEERD
+✅ PERFECT VOOR THEORIE-EXAMEN
+
+═══════════════════════════════════════════════
+
+Vragen? → Vraag Marcin
