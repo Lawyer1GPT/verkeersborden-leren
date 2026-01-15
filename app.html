@@ -708,10 +708,10 @@
                 const response = await fetch('verkeersborden_officieel.json');
                 const data = await response.json();
 
-                // Add image URLs to signs data
+                // Add image URLs to signs data (use local images)
                 allSigns = data.borden.map(sign => ({
                     ...sign,
-                    imageUrl: imageUrls[sign.code] || null
+                    imageUrl: `images/${sign.code}.png`
                 }));
 
                 filteredSigns = [...allSigns];
