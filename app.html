@@ -13,9 +13,15 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
             min-height: 100vh;
             padding: 10px;
+            color: #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        body.light-theme {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
             color: #333;
         }
 
@@ -26,36 +32,83 @@
         }
 
         header {
-            background: white;
+            background: #1a1a1a;
             border-radius: 15px;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,255,0,0.1);
             text-align: center;
+            border: 1px solid #00ff00;
+        }
+
+        body.light-theme header {
+            background: white;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .logo {
-            height: 60px;
+            height: 80px;
             margin-bottom: 15px;
         }
 
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #00ff00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: #00dd00;
+            transform: scale(1.05);
+        }
+
+        body.light-theme .theme-toggle {
+            background: #1e3c72;
+            color: white;
+        }
+
         h1 {
-            color: #1e3c72;
+            color: #00ff00;
             font-size: 24px;
             margin-bottom: 10px;
         }
 
+        body.light-theme h1 {
+            color: #1e3c72;
+        }
+
         .subtitle {
-            color: #666;
+            color: #888;
             font-size: 14px;
             margin-bottom: 15px;
         }
 
+        body.light-theme .subtitle {
+            color: #666;
+        }
+
         .controls {
-            background: white;
+            background: #222;
             border-radius: 15px;
             padding: 20px;
             margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,255,0,0.1);
+            border: 1px solid #333;
+        }
+
+        body.light-theme .controls {
+            background: white;
+            border: 1px solid #e0e0e0;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
@@ -63,14 +116,27 @@
             width: 100%;
             padding: 15px;
             font-size: 16px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid #333;
             border-radius: 10px;
             margin-bottom: 15px;
             transition: all 0.3s;
+            background: #1a1a1a;
+            color: #e0e0e0;
         }
 
         .search-box:focus {
             outline: none;
+            border-color: #00ff00;
+            box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.2);
+        }
+
+        body.light-theme .search-box {
+            background: white;
+            color: #333;
+            border: 2px solid #e0e0e0;
+        }
+
+        body.light-theme .search-box:focus {
             border-color: #1e3c72;
             box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
         }
@@ -84,9 +150,9 @@
 
         .filter-btn {
             padding: 10px 20px;
-            border: 2px solid #1e3c72;
-            background: white;
-            color: #1e3c72;
+            border: 2px solid #00ff00;
+            background: #1a1a1a;
+            color: #00ff00;
             border-radius: 20px;
             cursor: pointer;
             font-size: 14px;
@@ -95,12 +161,23 @@
         }
 
         .filter-btn:hover {
+            background: #00ff00;
+            color: #000;
+        }
+
+        body.light-theme .filter-btn {
+            border: 2px solid #1e3c72;
+            background: white;
+            color: #1e3c72;
+        }
+
+        body.light-theme .filter-btn:hover {
             background: #f0f0f0;
         }
 
         .filter-btn.active {
-            background: #1e3c72;
-            color: white;
+            background: #00ff00;
+            color: #000;
         }
 
         .mode-buttons {
@@ -143,6 +220,10 @@
             justify-content: space-around;
             margin-top: 15px;
             padding-top: 15px;
+            border-top: 2px solid #333;
+        }
+
+        body.light-theme .stats {
             border-top: 2px solid #e0e0e0;
         }
 
@@ -153,13 +234,21 @@
         .stat-number {
             font-size: 24px;
             font-weight: bold;
+            color: #00ff00;
+        }
+
+        body.light-theme .stat-number {
             color: #1e3c72;
         }
 
         .stat-label {
             font-size: 12px;
-            color: #666;
+            color: #888;
             margin-top: 5px;
+        }
+
+        body.light-theme .stat-label {
+            color: #666;
         }
 
         /* Browse Mode */
@@ -171,18 +260,31 @@
         }
 
         .sign-card {
-            background: white;
+            background: #222;
             border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,255,0,0.1);
             transition: all 0.3s;
             cursor: pointer;
             position: relative;
+            border: 1px solid #333;
         }
 
         .sign-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,255,0,0.2);
+            border-color: #00ff00;
+        }
+
+        body.light-theme .sign-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        body.light-theme .sign-card:hover {
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border-color: #1e3c72;
         }
 
         .sign-image-container {
@@ -191,11 +293,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f8f9fa;
+            background: #1a1a1a;
             border-radius: 10px;
             margin-bottom: 15px;
             position: relative;
             overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        body.light-theme .sign-image-container {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+        }
         }
 
         .sign-image {
@@ -496,7 +605,8 @@
 <body>
     <div class="container">
         <header>
-            <img src="logo.svg" alt="Lewandowski.ai" class="logo">
+            <button class="theme-toggle" onclick="toggleTheme()">☀️ Light</button>
+            <img src="logo.png" alt="Lewandowski.ai" class="logo">
             <h1>Verkeersborden Leren</h1>
             <div class="subtitle">Officiele RVV 1990 - Reglement verkeersregels en verkeerstekens</div>
         </header>
