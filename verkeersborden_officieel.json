@@ -1,0 +1,940 @@
+{
+  "metadata": {
+    "bron": "Reglement verkeersregels en verkeerstekens 1990 (RVV 1990)",
+    "datum": "2026-01-01",
+    "bijlage": "Bijlage 1. Verkeersborden",
+    "totaal_aantal": 186
+  },
+  "borden": [
+    {
+      "code": "A1",
+      "omschrijving": "Maximumsnelheid",
+      "hoofdstuk": "A. Snelheid"
+    },
+    {
+      "code": "A2",
+      "omschrijving": "Einde maximumsnelheid",
+      "hoofdstuk": "A. Snelheid"
+    },
+    {
+      "code": "A3",
+      "omschrijving": "Maximumsnelheid op een electronisch signaleringsbord",
+      "hoofdstuk": "A. Snelheid"
+    },
+    {
+      "code": "A4",
+      "omschrijving": "Adviessnelheid",
+      "hoofdstuk": "A. Snelheid"
+    },
+    {
+      "code": "A5",
+      "omschrijving": "Einde adviessnelheid",
+      "hoofdstuk": "A. Snelheid"
+    },
+    {
+      "code": "B1",
+      "omschrijving": "Voorrangsweg",
+      "hoofdstuk": "B. Voorrang"
+    },
+    {
+      "code": "B2",
+      "omschrijving": "Einde voorrangsweg",
+      "hoofdstuk": "B. Voorrang"
+    },
+    {
+      "code": "B3",
+      "omschrijving": "Voorrangskruispunt",
+      "hoofdstuk": "B. Voorrang"
+    },
+    {
+      "code": "B4",
+      "omschrijving": "Voorrangskruispunt Zijweg links",
+      "hoofdstuk": "B. Voorrang"
+    },
+    {
+      "code": "B5",
+      "omschrijving": "Voorrangskruispunt Zijweg rechts",
+      "hoofdstuk": "B. Voorrang"
+    },
+    {
+      "code": "B6",
+      "omschrijving": "Verleen voorrang aan bestuurders op de kruisende weg",
+      "hoofdstuk": "B. Voorrang"
+    },
+    {
+      "code": "B7",
+      "omschrijving": "Stop; verleen voorrang aan bestuurders op de kruisende weg",
+      "hoofdstuk": "B. Voorrang"
+    },
+    {
+      "code": "C1",
+      "omschrijving": "Gesloten in beide richtingen voor voertuigen, ruiters en geleiders van rij- of trekdieren of vee",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C2",
+      "omschrijving": "Eenrichtingsweg, in deze richting gesloten voor voertuigen, ruiters en geleiders van rij- of trekdieren of vee",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C3",
+      "omschrijving": "Eenrichtingsweg",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C4",
+      "omschrijving": "Eenrichtingsweg",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C5",
+      "omschrijving": "Inrijden toegestaan",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C6",
+      "omschrijving": "Gesloten voor motorvoertuigen op meer dan twee wielen",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C7",
+      "omschrijving": "Gesloten voor vrachtauto's",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C7a",
+      "omschrijving": "Gesloten voor autobussen",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C7b",
+      "omschrijving": "Gesloten voor autobussen en vrachtauto’s",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C8",
+      "omschrijving": "Gesloten voor landbouw- en bosbouwtrekkers, motorrijtuigen met beperkte snelheid en mobiele machines",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C9",
+      "omschrijving": "Gesloten voor ruiters, vee, wagens, landbouw- en bosbouwtrekkers, motorrijtuigen met beperkte snelheid, mobiele machines, brommobielen, fietsen, snorfietsen, bromfietsen en gehandicaptenvoertuigen",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C10",
+      "omschrijving": "Gesloten voor motorvoertuigen met aanhangwagen",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C11",
+      "omschrijving": "Gesloten voor motorfietsen",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C12",
+      "omschrijving": "Gesloten voor alle motorvoertuigen",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C13",
+      "omschrijving": "Gesloten voor bromfietsen, snorfietsen en gehandicaptenvoertuigen, met in werking zijnde motor",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C14",
+      "omschrijving": "Gesloten voor fietsen en voor gehandicaptenvoertuigen zonder motor",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C15",
+      "omschrijving": "Gesloten voor fietsen, bromfietsen en gehandicaptenvoertuigen",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C16",
+      "omschrijving": "Gesloten voor voetgangers",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C17",
+      "omschrijving": "Gesloten voor voertuigen en samenstellen van voertuigen die, met inbegrip van de lading, langer zijn dan op het bord is aangegeven",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C18",
+      "omschrijving": "Gesloten voor voertuigen die, met inbegrip van de lading, breder zijn dan op het bord is aangegeven",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C19",
+      "omschrijving": "Gesloten voor voertuigen die, met inbegrip van de lading, hoger zijn dan op het bord is aangegeven",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C20",
+      "omschrijving": "Gesloten voor voertuigen waarvan de aslast hoger is dan op het bord is aangegeven",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C21",
+      "omschrijving": "Gesloten voor voertuigen en samenstellen van voertuigen, waarvan de totaalmassa of de som van de aslasten hoger is dan op het bord is aangegeven",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C22",
+      "omschrijving": "Gesloten voor voertuigen met bepaalde gevaarlijke stoffen",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C22e",
+      "omschrijving": "Gesloten voor personenauto’s, bedrijfsauto’s, vrachtauto’s of autobussen vanwege emissie-eisen (milieuzone of nul-emissiezone)",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C22e1",
+      "omschrijving": "Onderbord bij C22e: nul-emissiezone voor bedrijfsauto’s en vrachtauto’s, toegankelijk voor emissieloze voertuigen",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C22e4",
+      "omschrijving": "Onderbord bij C22e: milieuzone voor dieselpersonenauto’s, toegankelijk voor emissieklasse 4 tot en met 6",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C22e5",
+      "omschrijving": "Onderbord bij C22e: milieuzone voor dieselpersonenauto’s, toegankelijk voor emissieklasse 5 en 6",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C22e6",
+      "omschrijving": "Onderbord bij C22e: milieuzone voor dieselpersonenauto’s en bedrijfsauto’s, toegankelijk voor emissieklasse 4 tot en met 6",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C22e7",
+      "omschrijving": "Onderbord bij C22e: milieuzone voor dieselpersonenauto’s en bedrijfsauto’s, toegankelijk voor emissieklasse 5 en 6",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C22e8",
+      "omschrijving": "Onderbord bij C22e: milieuzone voor vrachtauto’s, toegankelijk voor vrachtauto’s emissieklasse 6",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C22e9",
+      "omschrijving": "Onderbord bij C22e: milieuzone voor autobussen, toegankelijk voor autobussen emissieklasse 6",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C22e10",
+      "omschrijving": "Onderbord bij C22e: milieuzone voor vrachtauto’s en autobussen, toegankelijk voor vrachtauto’s en autobussen emissieklasse 6",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C22f",
+      "omschrijving": "Einde geslotenverklaring vanwege emissie-eisen (milieuzone of nul-emissiezone)",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C23-01",
+      "omschrijving": "Spitsstrook open",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C23-02",
+      "omschrijving": "Spitsstrook vrijmaken",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "C23-03",
+      "omschrijving": "Einde spitsstrook",
+      "hoofdstuk": "C. Geslotenverklaring"
+    },
+    {
+      "code": "D1",
+      "omschrijving": "Rotonde; verplichte rijrichting",
+      "hoofdstuk": "D. Rijrichting"
+    },
+    {
+      "code": "D2",
+      "omschrijving": "Gebod voor alle bestuurders het bord voorbij te gaan aan de zijde die de pijl aangeeft",
+      "hoofdstuk": "D. Rijrichting"
+    },
+    {
+      "code": "D3",
+      "omschrijving": "Bord mag aan beide zijden worden voorbijgegaan",
+      "hoofdstuk": "D. Rijrichting"
+    },
+    {
+      "code": "D4",
+      "omschrijving": "Gebod tot het volgen van de rijrichting die op het bord is aangegeven",
+      "hoofdstuk": "D. Rijrichting"
+    },
+    {
+      "code": "D5",
+      "omschrijving": "Gebod tot het volgen van de rijrichting die op het bord is aangegeven",
+      "hoofdstuk": "D. Rijrichting"
+    },
+    {
+      "code": "D6",
+      "omschrijving": "Gebod tot het volgen van één van de rijrichtingen die op het bord zijn aangegeven",
+      "hoofdstuk": "D. Rijrichting"
+    },
+    {
+      "code": "D7",
+      "omschrijving": "Gebod tot het volgen van één van de rijrichtingen die op het bord zijn aangegeven",
+      "hoofdstuk": "D. Rijrichting"
+    },
+    {
+      "code": "E1",
+      "omschrijving": "Parkeerverbod",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E2",
+      "omschrijving": "Verbod stil te staan",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E3",
+      "omschrijving": "Verbod fietsen en bromfietsen te plaatsen",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E4",
+      "omschrijving": "Parkeergelegenheid",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E5",
+      "omschrijving": "Taxistandplaats",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E6",
+      "omschrijving": "Gehandicaptenparkeerplaats",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E7",
+      "omschrijving": "Gelegenheid bestemd voor het onmiddellijk laden en lossen van goederen",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E8",
+      "omschrijving": "Parkeergelegenheid alleen bestemd voor de voertuigcategorie of groep voertuigen die op het bord is aangegeven",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E8a",
+      "omschrijving": "Parkeergelegenheid alleen bestemd voor kampeerwagens",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E8b",
+      "omschrijving": "Parkeergelegenheid voor het parkeren met twee wielen op het trottoir",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E8c",
+      "omschrijving": "Parkeergelegenheid alleen bestemd voor het opladen van elektrische voertuigen",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E9",
+      "omschrijving": "Parkeergelegenheid alleen bestemd voor vergunninghouders",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E10",
+      "omschrijving": "Parkeerschijf-zone met verplicht gebruik van parkeerschijf, tevens parkeerverbod indien er langer wordt geparkeerd dan de parkeerduur die op het bord is aangegeven",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E11",
+      "omschrijving": "Einde parkeerschijf-zone met verplicht gebruik van parkeerschijf",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E12",
+      "omschrijving": "Parkeergelegenheid ten behoeve van overstappers op het openbaar vervoer",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "E13",
+      "omschrijving": "Parkeergelegenheid ten behoeve van carpoolers",
+      "hoofdstuk": "E. Parkeren en stilstaan"
+    },
+    {
+      "code": "F1",
+      "omschrijving": "Verbod voor motorvoertuigen om elkaar onderling in te halen",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F2",
+      "omschrijving": "Einde verbod voor motorvoertuigen om elkaar onderling in te halen",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F3",
+      "omschrijving": "Verbod voor vrachtauto's om motorvoertuigen in te halen",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F4",
+      "omschrijving": "Einde verbod voor vrachtauto's om motorvoertuigen in te halen",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F5",
+      "omschrijving": "Verbod voor bestuurders door te gaan bij nadering van verkeer uit tegengestelde richting",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F6",
+      "omschrijving": "Bestuurders uit tegengestelde richting moeten verkeer dat van deze richting nadert voor laten gaan",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F7",
+      "omschrijving": "Keerverbod",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F8",
+      "omschrijving": "Einde van alle door verkeersborden aangegeven verboden",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F9",
+      "omschrijving": "Einde van alle op een elektronisch signaleringsbord aangegeven verboden",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F10",
+      "omschrijving": "Stop. In het bord kan worden aangegeven door wie of waarom het bord wordt toegepast",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F11",
+      "omschrijving": "Verplicht gebruik passeerbaan of passeerstrook (rijbaan of -strook om ingehaald te kunnen worden), uitsluitend bestemd voor landbouw- en bosbouwtrekkers, motorrijtuigen met beperkte snelheid en mobiele machines",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F12",
+      "omschrijving": "Einde verplicht gebruik passeerbaan of passeerstrook (rijbaan of -strook om ingehaald te kunnen worden), uitsluitend bestemd voor landbouw- en bosbouwtrekkers, motorrijtuigen met beperkte snelheid en mobiele machines",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F13",
+      "omschrijving": "Rijbaan of -strook uitsluitend ten behoeve van lijnbussen",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F14",
+      "omschrijving": "Einde busbaan of -strook",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F15",
+      "omschrijving": "Rijbaan of -strook uitsluitend ten behoeve van trams",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F16",
+      "omschrijving": "Einde trambaan of -strook",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F17",
+      "omschrijving": "Rijbaan of -strook uitsluitend ten behoeve van lijnbussen en trams",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F18",
+      "omschrijving": "Einde bus- en trambaan of -strook",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F19",
+      "omschrijving": "Rijbaan of -strook uitsluitend ten behoeve van vrachtauto’s en lijnbussen",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F20",
+      "omschrijving": "Einde rijbaan of -strook voor vrachtauto’s en lijnbussen",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F21",
+      "omschrijving": "Rijbaan of -strook uitsluitend ten behoeve van vrachtauto’s",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "F22",
+      "omschrijving": "Einde rijbaan of -strook voor vrachtauto’s",
+      "hoofdstuk": "F. Overige geboden en verboden"
+    },
+    {
+      "code": "G1",
+      "omschrijving": "Autosnelweg",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G2",
+      "omschrijving": "Einde Autosnelweg",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G3",
+      "omschrijving": "Autoweg",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G4",
+      "omschrijving": "Einde autoweg",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G5",
+      "omschrijving": "Erf",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G6",
+      "omschrijving": "Einde erf",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G7",
+      "omschrijving": "Voetpad",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G8",
+      "omschrijving": "Einde voetpad",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G9",
+      "omschrijving": "Ruiterpad",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G10",
+      "omschrijving": "Einde ruiterpad",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G11",
+      "omschrijving": "Verplicht fietspad",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G12",
+      "omschrijving": "Einde verplicht fietspad",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G12a",
+      "omschrijving": "Fiets/bromfietspad",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G12b",
+      "omschrijving": "Einde fiets/bromfietspad",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G13",
+      "omschrijving": "Onverplicht fietspad",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "G14",
+      "omschrijving": "Einde onverplicht fietspad",
+      "hoofdstuk": "G. Verkeersregels"
+    },
+    {
+      "code": "H1",
+      "omschrijving": "Bebouwde kom",
+      "hoofdstuk": "H. Bebouwde kom"
+    },
+    {
+      "code": "H2",
+      "omschrijving": "Einde bebouwde kom",
+      "hoofdstuk": "H. Bebouwde kom"
+    },
+    {
+      "code": "J1",
+      "omschrijving": "Slecht wegdek",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J2",
+      "omschrijving": "Bocht naar rechts",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J3",
+      "omschrijving": "Bocht naar links",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J4",
+      "omschrijving": "S-bocht(en), eerst naar rechts",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J5",
+      "omschrijving": "S-bocht(en), eerst naar links",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J6",
+      "omschrijving": "Steile helling",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J7",
+      "omschrijving": "Gevaarlijke daling",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J8",
+      "omschrijving": "Gevaarlijk kruispunt",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J9",
+      "omschrijving": "Rotonde",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J10",
+      "omschrijving": "Overweg met slagbomen",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J11",
+      "omschrijving": "Overweg zonder slagbomen",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J12",
+      "omschrijving": "Overweg met enkel spoor",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J13",
+      "omschrijving": "Overweg met twee of meer sporen",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J14",
+      "omschrijving": "Tram(kruising)",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J15",
+      "omschrijving": "Beweegbare brug",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J16",
+      "omschrijving": "Werk in uitvoering",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J17",
+      "omschrijving": "Rijbaanversmalling",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J18",
+      "omschrijving": "Rijbaanversmalling rechts",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J19",
+      "omschrijving": "Rijbaanversmalling links",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J20",
+      "omschrijving": "Slipgevaar",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J21",
+      "omschrijving": "Kinderen",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J22",
+      "omschrijving": "Voetgangersoversteekplaats",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J23",
+      "omschrijving": "Voetgangers",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J24",
+      "omschrijving": "Fietsers en bromfietsers",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J25",
+      "omschrijving": "Losliggende stenen",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J26",
+      "omschrijving": "Kade of rivieroever",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J27",
+      "omschrijving": "Groot wild",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J28",
+      "omschrijving": "Vee",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J29",
+      "omschrijving": "Tegenliggers",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J30",
+      "omschrijving": "Laagvliegende vliegtuigen",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J31",
+      "omschrijving": "Zijwind",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J32",
+      "omschrijving": "Verkeerslichten",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J33",
+      "omschrijving": "File",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J34",
+      "omschrijving": "Ongeval",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J35",
+      "omschrijving": "Slecht zicht door sneeuw, regen of mist",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J36",
+      "omschrijving": "IJzel of sneeuw",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J37",
+      "omschrijving": "Gevaar (de aard van het gevaar is aangegeven op het onderbord",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J38",
+      "omschrijving": "Verkeersdrempel",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "J39",
+      "omschrijving": "Waarschuwing voor elektrische in- en uitschuifbare paal in de rijbaan (poller) waarmee toegankelijkheid van straten en gebieden kan worden geregeld.",
+      "hoofdstuk": "J. Waarschuwing"
+    },
+    {
+      "code": "K1",
+      "omschrijving": "Lage beslissingwegwijzer langs autosnelweg voor de doorgaande richting, met interlokale doelen en routenummer autosnelweg",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K2",
+      "omschrijving": "Voorwegwijzer langs autosnelweg voor de afgaande richting, met afstandaanduiding, afritnummer, interlokale doelen (bovenste doel = afritnaam), verwijzing naar vliegveld/luchthaven en routenummer niet-autosnelweg",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K3",
+      "omschrijving": "Beslissingswegwijzer langs autosnelweg voor de afgaande richting naar een verzorgingsplaats, met de naam van de parkeerplaats en symbolen die de aard van de voorzieningen aangeven",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K4",
+      "omschrijving": "Hoge beslissingswegwijzer langs autosnelweg met rijstrookpaneel voor de doorgaande richting en aftakkingspaneel voor de afgaande richting, met interlokale doelen, routenummers autosnelwegen en Europese hoofdroutes",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K5",
+      "omschrijving": "Voorwegwijzer langs niet-autosnelweg, met interlokale doelen, routenummers, viaductsymbool en aanduiding industrieterrein",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K6",
+      "omschrijving": "Beslissingswegwijzer langs niet-autosnelweg met interlokale doelen en routenummer niet-autosnelweg",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K7",
+      "omschrijving": "Wegwijzer voor fietsers en bromfietsers (handwijzer), met lokaal doel, interlokaal doel, stedelijk fietsroutenummer (boven), en met interlokale doelen en interlokaal fietsroutenummer (onder)",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K8",
+      "omschrijving": "Wegwijzer voor fietsers en bromfietsers (stapelbord), met interlokale doelen en een via een alternatieve route te bereiken doel (cursief)",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K9",
+      "omschrijving": "Omleiding. Maatregel op voorwegwijzer langs niet-autosnelweg",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K10",
+      "omschrijving": "Voorwegwijzer binnen de bebouwde kom met interlokaal doel, lokaal doel, een dagrecreatiecentrum, objecten en stadsroutenummers",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K11",
+      "omschrijving": "Voorsorteren op niet-autosnelweg. Bord met interlokale doelen, routenummers en verwijzing naar autosnelweg",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K12",
+      "omschrijving": "Wijkwegwijzer binnen de bebouwde kom, met wijknamen (in verkeersgebieden)",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K13",
+      "omschrijving": "Wijkwegwijzer binnen de bebouwde kom, met wijknummers (in verkeersgebieden)",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "K14",
+      "omschrijving": "Route voor het vervoer van bepaalde gevaarlijke stoffen",
+      "hoofdstuk": "K. Bewegwijzering"
+    },
+    {
+      "code": "L1",
+      "omschrijving": "Hoogte onderdoorgang",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L2",
+      "omschrijving": "Voetgangersoversteekplaats",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L3",
+      "omschrijving": "Bushalte / tramhalte",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L4",
+      "omschrijving": "Voorsorteren",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L5",
+      "omschrijving": "Einde rijstrook",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L6",
+      "omschrijving": "Splitsing",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L7",
+      "omschrijving": "Aantal doorgaande rijstroken",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L8",
+      "omschrijving": "Doodlopende weg",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L9",
+      "omschrijving": "Vooraanduiding doodlopende weg",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L10",
+      "omschrijving": "Vooraanduiding verkeersmaatregel voor de aangegeven richting",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L11",
+      "omschrijving": "Verkeersbord geldt alleen voor de aangegeven rijstrook/rijstroken",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L12",
+      "omschrijving": "Verkeersbord geldt alleen voor de aangegeven rijstrook",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L13",
+      "omschrijving": "verkeerstunnel",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L14",
+      "omschrijving": "Vluchthaven",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L15",
+      "omschrijving": "Vluchthaven voorzien van een noodtelefoon en brandblusapparaat",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L16",
+      "omschrijving": "Noodtelefoon",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L17",
+      "omschrijving": "Brandblusapparaat",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L18",
+      "omschrijving": "Noodtelefoon en brandblusapparaat",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L19",
+      "omschrijving": "Dichtstbijzijnde uitgang of twee dichtstbijzijnde uitgangen in de op het bord aangegeven richting en afstand",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L20",
+      "omschrijving": "Uitwijkplaats rechts van de weg",
+      "hoofdstuk": "L. Informatie"
+    },
+    {
+      "code": "L21",
+      "omschrijving": "Uitwijkplaats links van de weg",
+      "hoofdstuk": "L. Informatie"
+    }
+  ]
+}
