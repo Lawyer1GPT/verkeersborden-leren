@@ -1,0 +1,10 @@
+{
+    "liveServer.settings.port": 8888,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "files.associations": {
+        "*.html": "html",
+        "*.json": "json"
+    }
+}

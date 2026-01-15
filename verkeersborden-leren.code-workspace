@@ -1,0 +1,48 @@
+{
+    "folders": [
+        {
+            "path": ".",
+            "name": "Verkeersborden Leren - RVV 2026"
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/.git": false,
+            "**/node_modules": true,
+            "**/__pycache__": true,
+            "**/.DS_Store": true
+        },
+        "editor.formatOnSave": true,
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "html.format.wrapLineLength": 120,
+        "html.format.indentInnerHtml": true,
+        "[html]": {
+            "editor.defaultFormatter": "vscode.html-language-features"
+        },
+        "[json]": {
+            "editor.defaultFormatter": "vscode.json-language-features"
+        },
+        "git.enabled": true,
+        "git.autofetch": true
+    },
+    "extensions": {
+        "recommendations": [
+            "dbaeumer.vscode-eslint",
+            "esbenp.prettier-vscode",
+            "ms-vscode.live-server",
+            "ritwickdey.LiveServer"
+        ]
+    },
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "type": "chrome",
+                "request": "launch",
+                "name": "Open app.html",
+                "file": "${workspaceFolder}/app.html"
+            }
+        ]
+    }
+}
