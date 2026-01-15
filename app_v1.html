@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Verkeersborden Leren - Officiele RVV 1990</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .controls {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .filter-btn.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .mode-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .mode-btn {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+            color: white;
+        }
+
+        .mode-btn.browse {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .mode-btn.quiz {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .mode-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .mode-btn.active {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+            transform: scale(1.05);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Browse Mode */
+        .signs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .sign-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .sign-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .sign-image-container {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sign-image {
+            max-width: 90%;
+            max-height: 180px;
+            object-fit: contain;
+        }
+
+        .sign-code {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .sign-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .sign-category {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .no-image {
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Quiz Mode */
+        .quiz-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .quiz-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .quiz-counter {
+            font-size: 16px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .quiz-score {
+            font-size: 16px;
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        .quiz-image-container {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .quiz-image {
+            max-width: 90%;
+            max-height: 280px;
+            object-fit: contain;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-option {
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: white;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        .quiz-option:hover:not(.correct):not(.incorrect):not(.disabled) {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .quiz-option.correct {
+            border-color: #4caf50;
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .quiz-option.incorrect {
+            border-color: #f44336;
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .quiz-option.disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .quiz-navigation {
+            display: flex;
+            gap: 10px;
+        }
+
+        .quiz-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+            color: white;
+        }
+
+        .quiz-btn.next {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .quiz-btn.restart {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .quiz-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .quiz-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .quiz-result {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .quiz-result h2 {
+            color: #667eea;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-result-score {
+            font-size: 48px;
+            font-weight: bold;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        .quiz-result-message {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: white;
+            font-size: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            .signs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+
+            .sign-card {
+                padding: 15px;
+            }
+
+            .sign-image-container {
+                height: 150px;
+            }
+
+            .sign-image {
+                max-height: 130px;
+            }
+
+            .sign-title {
+                font-size: 14px;
+            }
+
+            .mode-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .quiz-container {
+                padding: 20px;
+            }
+
+            .quiz-image-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Verkeersborden Leren</h1>
+            <div class="subtitle">Officiele RVV 1990 - Reglement verkeersregels en verkeerstekens</div>
+        </header>
+
+        <div class="controls">
+            <input type="text" class="search-box" id="searchBox" placeholder="Zoek op code of omschrijving (bijv. A1, parkeren, snelheid)...">
+
+            <div class="filter-buttons" id="filterButtons">
+                <button class="filter-btn active" data-filter="all">Alle</button>
+            </div>
+
+            <div class="mode-buttons">
+                <button class="mode-btn browse active" onclick="switchMode('browse')">Bladeren</button>
+                <button class="mode-btn quiz" onclick="switchMode('quiz')">Quiz</button>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="totalSigns">0</div>
+                    <div class="stat-label">Totaal borden</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="visibleSigns">0</div>
+                    <div class="stat-label">Zichtbaar</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Browse Mode -->
+        <div id="browseMode">
+            <div class="signs-grid" id="signsGrid"></div>
+        </div>
+
+        <!-- Quiz Mode -->
+        <div id="quizMode" class="hidden">
+            <div class="quiz-container">
+                <div id="quizQuestion">
+                    <div class="quiz-progress">
+                        <div class="quiz-counter" id="quizCounter">Vraag 1/10</div>
+                        <div class="quiz-score" id="quizScore">Score: 0/0</div>
+                    </div>
+
+                    <div class="quiz-image-container">
+                        <img id="quizImage" class="quiz-image" alt="Verkeersbord">
+                    </div>
+
+                    <div class="quiz-options" id="quizOptions"></div>
+
+                    <div class="quiz-navigation">
+                        <button class="quiz-btn next" id="quizNextBtn" onclick="nextQuestion()">Volgende</button>
+                    </div>
+                </div>
+
+                <div id="quizResults" class="hidden quiz-result">
+                    <h2>Quiz Voltooid!</h2>
+                    <div class="quiz-result-score" id="finalScore">0/10</div>
+                    <div class="quiz-result-message" id="resultMessage"></div>
+                    <button class="quiz-btn restart" onclick="startQuiz()">Opnieuw Starten</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data storage
+        let allSigns = [];
+        let filteredSigns = [];
+        let currentMode = 'browse';
+
+        // Quiz state
+        let quizQuestions = [];
+        let currentQuestionIndex = 0;
+        let quizScore = 0;
+        let answeredCorrectly = false;
+
+        // Image URL mapping - Complete RVV 1990 official images
+        const imageUrls = {
+            'A1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269359.png',
+            'A2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27594.png',
+            'A3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27596.png',
+            'A4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27597.png',
+            'A5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269360.png',
+            'B1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269361.png',
+            'B2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269362.png',
+            'B3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269363.png',
+            'B4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269364.png',
+            'B5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269366.png',
+            'B6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269367.png',
+            'B7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27605.png',
+            'C1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269369.png',
+            'C2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269370.png',
+            'C3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27608.png',
+            'C4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27609.png',
+            'C5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27610.png',
+            'C6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269371.png',
+            'C7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269372.png',
+            'C7a': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269373.png',
+            'C7b': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269374.png',
+            'C8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269375.png',
+            'C9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269376.png',
+            'C10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269377.png',
+            'C11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269378.png',
+            'C12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269379.png',
+            'C13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269380.png',
+            'C14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269381.png',
+            'C15': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269382.png',
+            'C16': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269383.png',
+            'C17': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269384.png',
+            'C18': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269386.png',
+            'C19': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269387.png',
+            'C20': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269389.png',
+            'C21': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269390.png',
+            'C22': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269392.png',
+            'C22e': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273613.png',
+            'C22e1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273614.png',
+            'C22e4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273615.png',
+            'C22e5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273616.png',
+            'C22e6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273617.png',
+            'C22e7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273618.png',
+            'C22e8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273619.png',
+            'C22e9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273620.png',
+            'C22e10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273621.png',
+            'C22f': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273622.png',
+            'C23-01': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=53250.png',
+            'C23-02': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=53251.png',
+            'C23-03': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=53252.png',
+            'D1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27628.png',
+            'D2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27629.png',
+            'D3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27630.png',
+            'D4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27631.png',
+            'D5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27632.png',
+            'D6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27633.png',
+            'D7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27634.png',
+            'E1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269397.png',
+            'E2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269398.png',
+            'E3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269399.png',
+            'E4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27638.png',
+            'E5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27639.png',
+            'E6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27640.png',
+            'E7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27641.png',
+            'E8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27642.png',
+            'E8a': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269356.png',
+            'E8b': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269357.png',
+            'E8c': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269358.png',
+            'E9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27643.png',
+            'E10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27644.png',
+            'E11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27645.png',
+            'E12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27646.png',
+            'E13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27647.png',
+            'F1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269400.png',
+            'F2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27655.png',
+            'F3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269401.png',
+            'F4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27657.png',
+            'F5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269402.png',
+            'F6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269403.png',
+            'F7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269404.png',
+            'F8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27661.png',
+            'F9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27663.png',
+            'F10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269406.png',
+            'F11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258559.png',
+            'F12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258560.png',
+            'F13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258561.png',
+            'F14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258562.png',
+            'F15': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258563.png',
+            'F16': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258564.png',
+            'F17': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258565.png',
+            'F18': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258566.png',
+            'F19': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258567.png',
+            'F20': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258568.png',
+            'F21': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258569.png',
+            'F22': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258570.png',
+            'G1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27666.png',
+            'G2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269408.png',
+            'G3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27668.png',
+            'G4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269409.png',
+            'G5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27672.png',
+            'G6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269410.png',
+            'G7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27675.png',
+            'G8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269411.png',
+            'G9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27678.png',
+            'G10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269412.png',
+            'G11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27680.png',
+            'G12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269413.png',
+            'G12a': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=29586.png',
+            'G12b': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269414.png',
+            'G13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27682.png',
+            'G14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269415.png',
+            'H1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27685.png',
+            'H2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269416.png',
+            'J1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269417.png',
+            'J2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269418.png',
+            'J3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269419.png',
+            'J4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269420.png',
+            'J5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269421.png',
+            'J6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269422.png',
+            'J7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269423.png',
+            'J8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269424.png',
+            'J9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269425.png',
+            'J10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269426.png',
+            'J11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269427.png',
+            'J12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27702.png',
+            'J13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27703.png',
+            'J14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269428.png',
+            'J15': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269429.png',
+            'J16': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269430.png',
+            'J17': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269431.png',
+            'J18': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269432.png',
+            'J19': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269433.png',
+            'J20': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269434.png',
+            'J21': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269435.png',
+            'J22': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269436.png',
+            'J23': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269438.png',
+            'J24': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269439.png',
+            'J25': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269441.png',
+            'J26': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269442.png',
+            'J27': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269443.png',
+            'J28': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269444.png',
+            'J29': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269445.png',
+            'J30': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269446.png',
+            'J31': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269447.png',
+            'J32': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269448.png',
+            'J33': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269449.png',
+            'J34': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269450.png',
+            'J35': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269451.png',
+            'J36': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269452.png',
+            'J37': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269453.png',
+            'J38': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269454.png',
+            'J39': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269455.png',
+            'K1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27732.png',
+            'K2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27733.png',
+            'K3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27734.png',
+            'K4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27735.png',
+            'K5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27736.png',
+            'K6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27737.png',
+            'K7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27738.png',
+            'K8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27739.png',
+            'K9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27740.png',
+            'K10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27741.png',
+            'K11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27742.png',
+            'K12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27743.png',
+            'K13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27744.png',
+            'K14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27745.png',
+            'L1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27746.png',
+            'L2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27747.png',
+            'L3a': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=250762.png',
+            'L3b': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=250763.png',
+            'L3c': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=250764.png',
+            'L4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27749.png',
+            'L5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27750.png',
+            'L6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27751.png',
+            'L7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27752.png',
+            'L8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27753.png',
+            'L9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27754.png',
+            'L10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27755.png',
+            'L11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27756.png',
+            'L12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27757.png',
+            'L13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239092.png',
+            'L14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239093.png',
+            'L15': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239094.png',
+            'L16': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239095.png',
+            'L17': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239096.png',
+            'L18': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239097.png',
+            'L19': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239098.png',
+            'L20': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258571.png',
+            'L21': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258572.png'
+        };
+
+        // Load data from JSON file
+        async function loadData() {
+            try {
+                const response = await fetch('verkeersborden_officieel.json');
+                const data = await response.json();
+
+                // Add image URLs to signs data (use local images)
+                allSigns = data.borden.map(sign => ({
+                    ...sign,
+                    imageUrl: `images/${sign.code}.png`
+                }));
+
+                filteredSigns = [...allSigns];
+
+                // Create filter buttons
+                createFilterButtons();
+
+                // Display signs
+                displaySigns();
+
+                // Update stats
+                updateStats();
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('signsGrid').innerHTML =
+                    '<div class="loading">Fout bij laden van data. Controleer of verkeersborden_officieel.json beschikbaar is.</div>';
+            }
+        }
+
+        // Create filter buttons for categories
+        function createFilterButtons() {
+            const categories = [...new Set(allSigns.map(sign => sign.hoofdstuk))];
+            const filterContainer = document.getElementById('filterButtons');
+
+            categories.forEach(category => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.textContent = category;
+                btn.setAttribute('data-filter', category);
+                btn.onclick = () => filterByCategory(category);
+                filterContainer.appendChild(btn);
+            });
+        }
+
+        // Filter by category
+        function filterByCategory(category) {
+            // Update button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Filter signs
+            if (category === 'all') {
+                filteredSigns = [...allSigns];
+            } else {
+                filteredSigns = allSigns.filter(sign => sign.hoofdstuk === category);
+            }
+
+            // Apply search if active
+            const searchTerm = document.getElementById('searchBox').value;
+            if (searchTerm) {
+                searchSigns(searchTerm);
+            } else {
+                displaySigns();
+            }
+
+            updateStats();
+        }
+
+        // Search functionality
+        document.getElementById('searchBox').addEventListener('input', (e) => {
+            searchSigns(e.target.value);
+        });
+
+        function searchSigns(searchTerm) {
+            const term = searchTerm.toLowerCase().trim();
+
+            if (term === '') {
+                filteredSigns = [...allSigns];
+                // Re-apply category filter if active
+                const activeFilter = document.querySelector('.filter-btn.active');
+                if (activeFilter && activeFilter.dataset.filter !== 'all') {
+                    filteredSigns = filteredSigns.filter(sign =>
+                        sign.hoofdstuk === activeFilter.dataset.filter
+                    );
+                }
+            } else {
+                filteredSigns = allSigns.filter(sign =>
+                    sign.code.toLowerCase().includes(term) ||
+                    sign.omschrijving.toLowerCase().includes(term) ||
+                    sign.hoofdstuk.toLowerCase().includes(term)
+                );
+            }
+
+            displaySigns();
+            updateStats();
+        }
+
+        // Display signs in grid
+        function displaySigns() {
+            const grid = document.getElementById('signsGrid');
+
+            if (filteredSigns.length === 0) {
+                grid.innerHTML = '<div class="loading">Geen verkeersborden gevonden.</div>';
+                return;
+            }
+
+            grid.innerHTML = filteredSigns.map(sign => `
+                <div class="sign-card">
+                    <div class="sign-image-container">
+                        ${sign.imageUrl ?
+                            `<img src="${sign.imageUrl}" alt="${sign.omschrijving}" class="sign-image" onerror="this.parentElement.innerHTML='<div class=\\'no-image\\'>Afbeelding niet beschikbaar</div>'">` :
+                            '<div class="no-image">Afbeelding niet beschikbaar</div>'
+                        }
+                    </div>
+                    <div class="sign-code">${sign.code}</div>
+                    <div class="sign-title">${sign.omschrijving}</div>
+                    <div class="sign-category">${sign.hoofdstuk}</div>
+                </div>
+            `).join('');
+        }
+
+        // Update statistics
+        function updateStats() {
+            document.getElementById('totalSigns').textContent = allSigns.length;
+            document.getElementById('visibleSigns').textContent = filteredSigns.length;
+        }
+
+        // Switch between browse and quiz mode
+        function switchMode(mode) {
+            currentMode = mode;
+
+            // Update button states
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.mode-btn.${mode}`).classList.add('active');
+
+            // Show/hide appropriate content
+            if (mode === 'browse') {
+                document.getElementById('browseMode').classList.remove('hidden');
+                document.getElementById('quizMode').classList.add('hidden');
+            } else {
+                document.getElementById('browseMode').classList.add('hidden');
+                document.getElementById('quizMode').classList.remove('hidden');
+                startQuiz();
+            }
+        }
+
+        // Quiz functionality
+        function startQuiz() {
+            // Only use signs that have images
+            const signsWithImages = allSigns.filter(sign => sign.imageUrl);
+
+            if (signsWithImages.length < 4) {
+                alert('Niet genoeg borden met afbeeldingen beschikbaar voor een quiz.');
+                return;
+            }
+
+            // Select 10 random signs for quiz
+            quizQuestions = [];
+            const shuffled = [...signsWithImages].sort(() => Math.random() - 0.5);
+            quizQuestions = shuffled.slice(0, Math.min(10, signsWithImages.length));
+
+            currentQuestionIndex = 0;
+            quizScore = 0;
+
+            document.getElementById('quizQuestion').classList.remove('hidden');
+            document.getElementById('quizResults').classList.add('hidden');
+
+            showQuestion();
+        }
+
+        function showQuestion() {
+            if (currentQuestionIndex >= quizQuestions.length) {
+                showResults();
+                return;
+            }
+
+            answeredCorrectly = false;
+            const currentSign = quizQuestions[currentQuestionIndex];
+
+            // Update progress
+            document.getElementById('quizCounter').textContent =
+                `Vraag ${currentQuestionIndex + 1}/${quizQuestions.length}`;
+            document.getElementById('quizScore').textContent =
+                `Score: ${quizScore}/${currentQuestionIndex}`;
+
+            // Show image
+            document.getElementById('quizImage').src = currentSign.imageUrl;
+
+            // Create options
+            const options = generateOptions(currentSign);
+            const optionsContainer = document.getElementById('quizOptions');
+
+            optionsContainer.innerHTML = options.map((option, index) => `
+                <button class="quiz-option" onclick="selectAnswer(${index})" data-correct="${option.code === currentSign.code}">
+                    <strong>${option.code}</strong> - ${option.omschrijving}
+                </button>
+            `).join('');
+
+            document.getElementById('quizNextBtn').disabled = true;
+        }
+
+        function generateOptions(correctSign) {
+            const options = [correctSign];
+            const signsWithImages = allSigns.filter(sign =>
+                sign.imageUrl && sign.code !== correctSign.code
+            );
+
+            // Add 3 random wrong answers
+            const shuffled = [...signsWithImages].sort(() => Math.random() - 0.5);
+            options.push(...shuffled.slice(0, 3));
+
+            // Shuffle options
+            return options.sort(() => Math.random() - 0.5);
+        }
+
+        function selectAnswer(index) {
+            const options = document.querySelectorAll('.quiz-option');
+            const selectedOption = options[index];
+            const isCorrect = selectedOption.getAttribute('data-correct') === 'true';
+
+            // Disable all options
+            options.forEach(opt => {
+                opt.classList.add('disabled');
+                if (opt.getAttribute('data-correct') === 'true') {
+                    opt.classList.add('correct');
+                }
+            });
+
+            // Mark selected answer
+            if (!isCorrect) {
+                selectedOption.classList.add('incorrect');
+            } else if (!answeredCorrectly) {
+                quizScore++;
+                answeredCorrectly = true;
+            }
+
+            // Enable next button
+            document.getElementById('quizNextBtn').disabled = false;
+
+            // Update score display
+            document.getElementById('quizScore').textContent =
+                `Score: ${quizScore}/${currentQuestionIndex + 1}`;
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+        function showResults() {
+            document.getElementById('quizQuestion').classList.add('hidden');
+            document.getElementById('quizResults').classList.remove('hidden');
+
+            const percentage = (quizScore / quizQuestions.length) * 100;
+            document.getElementById('finalScore').textContent =
+                `${quizScore}/${quizQuestions.length}`;
+
+            let message = '';
+            if (percentage >= 90) {
+                message = 'Uitstekend! Je kent de verkeersborden zeer goed!';
+            } else if (percentage >= 70) {
+                message = 'Goed gedaan! Je bent goed op weg!';
+            } else if (percentage >= 50) {
+                message = 'Niet slecht, maar er is ruimte voor verbetering.';
+            } else {
+                message = 'Blijf oefenen! Je kunt het!';
+            }
+
+            document.getElementById('resultMessage').textContent = message;
+        }
+
+        // Initialize app
+        loadData();
+    </script>
+</body>
+</html>

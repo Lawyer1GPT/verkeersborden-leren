@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Verkeersborden Leren - Officiele RVV 1990</title>
+    <title>Verkeersborden Leren - Lewandowski.ai</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             min-height: 100vh;
             padding: 10px;
             color: #333;
@@ -34,8 +34,20 @@
             text-align: center;
         }
 
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .logo-accent {
+            color: #2a5298;
+        }
+
         h1 {
-            color: #667eea;
+            color: #1e3c72;
             font-size: 24px;
             margin-bottom: 10px;
         }
@@ -66,8 +78,8 @@
 
         .search-box:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #1e3c72;
+            box-shadow: 0 0 0 3px rgba(30, 60, 114, 0.1);
         }
 
         .filter-buttons {
@@ -79,9 +91,9 @@
 
         .filter-btn {
             padding: 10px 20px;
-            border: 2px solid #667eea;
+            border: 2px solid #1e3c72;
             background: white;
-            color: #667eea;
+            color: #1e3c72;
             border-radius: 20px;
             cursor: pointer;
             font-size: 14px;
@@ -94,7 +106,7 @@
         }
 
         .filter-btn.active {
-            background: #667eea;
+            background: #1e3c72;
             color: white;
         }
 
@@ -116,11 +128,11 @@
         }
 
         .mode-btn.browse {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
         }
 
         .mode-btn.quiz {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #d4418e 0%, #f093fb 100%);
         }
 
         .mode-btn:hover {
@@ -148,7 +160,7 @@
         .stat-number {
             font-size: 24px;
             font-weight: bold;
-            color: #667eea;
+            color: #1e3c72;
         }
 
         .stat-label {
@@ -172,6 +184,7 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: all 0.3s;
             cursor: pointer;
+            position: relative;
         }
 
         .sign-card:hover {
@@ -200,7 +213,7 @@
 
         .sign-code {
             display: inline-block;
-            background: #667eea;
+            background: #1e3c72;
             color: white;
             padding: 5px 15px;
             border-radius: 20px;
@@ -230,6 +243,47 @@
             text-align: center;
         }
 
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            background: rgba(30, 60, 114, 0.98);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 350px;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip.show {
+            opacity: 1;
+        }
+
+        .tooltip-title {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .tooltip-description {
+            margin-bottom: 10px;
+        }
+
+        .tooltip-article {
+            font-size: 12px;
+            font-style: italic;
+            color: #cfd8e8;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+
         /* Quiz Mode */
         .quiz-container {
             background: white;
@@ -251,7 +305,7 @@
 
         .quiz-counter {
             font-size: 16px;
-            color: #667eea;
+            color: #1e3c72;
             font-weight: bold;
         }
 
@@ -259,6 +313,15 @@
             font-size: 16px;
             color: #4caf50;
             font-weight: bold;
+        }
+
+        .quiz-question-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.5;
         }
 
         .quiz-image-container {
@@ -297,7 +360,7 @@
         }
 
         .quiz-option:hover:not(.correct):not(.incorrect):not(.disabled) {
-            border-color: #667eea;
+            border-color: #1e3c72;
             background: #f8f9ff;
         }
 
@@ -336,11 +399,11 @@
         }
 
         .quiz-btn.next {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
         }
 
         .quiz-btn.restart {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #d4418e 0%, #f093fb 100%);
         }
 
         .quiz-btn:disabled {
@@ -359,7 +422,7 @@
         }
 
         .quiz-result h2 {
-            color: #667eea;
+            color: #1e3c72;
             font-size: 28px;
             margin-bottom: 20px;
         }
@@ -429,12 +492,18 @@
             .quiz-image-container {
                 height: 250px;
             }
+
+            .tooltip {
+                max-width: 280px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <div class="logo">Lewandowski<span class="logo-accent">.ai</span></div>
             <h1>Verkeersborden Leren</h1>
             <div class="subtitle">Officiele RVV 1990 - Reglement verkeersregels en verkeerstekens</div>
         </header>
@@ -473,11 +542,13 @@
             <div class="quiz-container">
                 <div id="quizQuestion">
                     <div class="quiz-progress">
-                        <div class="quiz-counter" id="quizCounter">Vraag 1/10</div>
+                        <div class="quiz-counter" id="quizCounter">Vraag 1/15</div>
                         <div class="quiz-score" id="quizScore">Score: 0/0</div>
                     </div>
 
-                    <div class="quiz-image-container">
+                    <div class="quiz-question-text" id="questionText"></div>
+
+                    <div class="quiz-image-container" id="quizImageContainer" style="display: none;">
                         <img id="quizImage" class="quiz-image" alt="Verkeersbord">
                     </div>
 
@@ -490,13 +561,16 @@
 
                 <div id="quizResults" class="hidden quiz-result">
                     <h2>Quiz Voltooid!</h2>
-                    <div class="quiz-result-score" id="finalScore">0/10</div>
+                    <div class="quiz-result-score" id="finalScore">0/15</div>
                     <div class="quiz-result-message" id="resultMessage"></div>
                     <button class="quiz-btn restart" onclick="startQuiz()">Opnieuw Starten</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip"></div>
 
     <script>
         // Data storage
@@ -510,197 +584,224 @@
         let quizScore = 0;
         let answeredCorrectly = false;
 
-        // Image URL mapping - Complete RVV 1990 official images
-        const imageUrls = {
-            'A1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269359.png',
-            'A2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27594.png',
-            'A3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27596.png',
-            'A4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27597.png',
-            'A5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269360.png',
-            'B1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269361.png',
-            'B2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269362.png',
-            'B3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269363.png',
-            'B4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269364.png',
-            'B5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269366.png',
-            'B6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269367.png',
-            'B7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27605.png',
-            'C1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269369.png',
-            'C2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269370.png',
-            'C3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27608.png',
-            'C4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27609.png',
-            'C5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27610.png',
-            'C6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269371.png',
-            'C7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269372.png',
-            'C7a': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269373.png',
-            'C7b': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269374.png',
-            'C8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269375.png',
-            'C9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269376.png',
-            'C10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269377.png',
-            'C11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269378.png',
-            'C12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269379.png',
-            'C13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269380.png',
-            'C14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269381.png',
-            'C15': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269382.png',
-            'C16': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269383.png',
-            'C17': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269384.png',
-            'C18': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269386.png',
-            'C19': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269387.png',
-            'C20': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269389.png',
-            'C21': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269390.png',
-            'C22': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269392.png',
-            'C22e': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273613.png',
-            'C22e1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273614.png',
-            'C22e4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273615.png',
-            'C22e5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273616.png',
-            'C22e6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273617.png',
-            'C22e7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273618.png',
-            'C22e8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273619.png',
-            'C22e9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273620.png',
-            'C22e10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273621.png',
-            'C22f': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=273622.png',
-            'C23-01': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=53250.png',
-            'C23-02': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=53251.png',
-            'C23-03': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=53252.png',
-            'D1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27628.png',
-            'D2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27629.png',
-            'D3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27630.png',
-            'D4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27631.png',
-            'D5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27632.png',
-            'D6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27633.png',
-            'D7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27634.png',
-            'E1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269397.png',
-            'E2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269398.png',
-            'E3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269399.png',
-            'E4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27638.png',
-            'E5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27639.png',
-            'E6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27640.png',
-            'E7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27641.png',
-            'E8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27642.png',
-            'E8a': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269356.png',
-            'E8b': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269357.png',
-            'E8c': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269358.png',
-            'E9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27643.png',
-            'E10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27644.png',
-            'E11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27645.png',
-            'E12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27646.png',
-            'E13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27647.png',
-            'F1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269400.png',
-            'F2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27655.png',
-            'F3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269401.png',
-            'F4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27657.png',
-            'F5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269402.png',
-            'F6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269403.png',
-            'F7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269404.png',
-            'F8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27661.png',
-            'F9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27663.png',
-            'F10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269406.png',
-            'F11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258559.png',
-            'F12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258560.png',
-            'F13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258561.png',
-            'F14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258562.png',
-            'F15': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258563.png',
-            'F16': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258564.png',
-            'F17': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258565.png',
-            'F18': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258566.png',
-            'F19': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258567.png',
-            'F20': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258568.png',
-            'F21': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258569.png',
-            'F22': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258570.png',
-            'G1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27666.png',
-            'G2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269408.png',
-            'G3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27668.png',
-            'G4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269409.png',
-            'G5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27672.png',
-            'G6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269410.png',
-            'G7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27675.png',
-            'G8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269411.png',
-            'G9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27678.png',
-            'G10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269412.png',
-            'G11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27680.png',
-            'G12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269413.png',
-            'G12a': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=29586.png',
-            'G12b': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269414.png',
-            'G13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27682.png',
-            'G14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269415.png',
-            'H1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27685.png',
-            'H2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269416.png',
-            'J1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269417.png',
-            'J2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269418.png',
-            'J3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269419.png',
-            'J4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269420.png',
-            'J5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269421.png',
-            'J6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269422.png',
-            'J7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269423.png',
-            'J8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269424.png',
-            'J9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269425.png',
-            'J10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269426.png',
-            'J11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269427.png',
-            'J12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27702.png',
-            'J13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27703.png',
-            'J14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269428.png',
-            'J15': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269429.png',
-            'J16': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269430.png',
-            'J17': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269431.png',
-            'J18': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269432.png',
-            'J19': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269433.png',
-            'J20': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269434.png',
-            'J21': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269435.png',
-            'J22': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269436.png',
-            'J23': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269438.png',
-            'J24': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269439.png',
-            'J25': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269441.png',
-            'J26': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269442.png',
-            'J27': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269443.png',
-            'J28': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269444.png',
-            'J29': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269445.png',
-            'J30': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269446.png',
-            'J31': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269447.png',
-            'J32': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269448.png',
-            'J33': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269449.png',
-            'J34': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269450.png',
-            'J35': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269451.png',
-            'J36': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269452.png',
-            'J37': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269453.png',
-            'J38': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269454.png',
-            'J39': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=269455.png',
-            'K1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27732.png',
-            'K2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27733.png',
-            'K3': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27734.png',
-            'K4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27735.png',
-            'K5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27736.png',
-            'K6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27737.png',
-            'K7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27738.png',
-            'K8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27739.png',
-            'K9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27740.png',
-            'K10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27741.png',
-            'K11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27742.png',
-            'K12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27743.png',
-            'K13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27744.png',
-            'K14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27745.png',
-            'L1': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27746.png',
-            'L2': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27747.png',
-            'L3a': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=250762.png',
-            'L3b': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=250763.png',
-            'L3c': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=250764.png',
-            'L4': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27749.png',
-            'L5': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27750.png',
-            'L6': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27751.png',
-            'L7': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27752.png',
-            'L8': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27753.png',
-            'L9': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27754.png',
-            'L10': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27755.png',
-            'L11': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27756.png',
-            'L12': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=27757.png',
-            'L13': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239092.png',
-            'L14': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239093.png',
-            'L15': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239094.png',
-            'L16': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239095.png',
-            'L17': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239096.png',
-            'L18': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239097.png',
-            'L19': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=239098.png',
-            'L20': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258571.png',
-            'L21': 'https://wetten.overheid.nl/afbeelding?toestandid=BWBR0004825/2026-01-01_0&naam=258572.png'
+        // Tooltip
+        const tooltip = document.getElementById('tooltip');
+
+        // Enhanced sign descriptions with RVV context
+        const signExplanations = {
+            'A1': {
+                description: 'Dit bord geeft de maximumsnelheid aan die op de weg geldt. De aangegeven snelheid mag niet worden overschreden.',
+                article: 'RVV 1990, Artikel 20-21: Binnen bebouwde kom 50 km/u, buiten bebouwde kom 80 km/u (of zoals aangegeven)'
+            },
+            'B1': {
+                description: 'Dit bord geeft aan dat u op een voorrangsweg rijdt. U heeft voorrang op kruispunten tot het volgende bord B2.',
+                article: 'RVV 1990, Artikel 15: Voorrangsregels op kruispunten'
+            },
+            'B6': {
+                description: 'Verleen voorrang aan bestuurders op de kruisende weg. U moet wachten als dat nodig is.',
+                article: 'RVV 1990, Artikel 15: Voorrang verlenen aan bestuurders van rechts'
+            },
+            'B7': {
+                description: 'Stop en verleen voorrang. U moet altijd volledig stoppen, ook als er geen verkeer is.',
+                article: 'RVV 1990, Artikel 15: Absolute stopplicht op dit kruispunt'
+            },
+            'C1': {
+                description: 'Deze weg is in beide richtingen gesloten voor alle voertuigen, ruiters en vee.',
+                article: 'RVV 1990: Geslotenverklaring - toegang verboden'
+            },
+            'C12': {
+                description: 'Deze weg is gesloten voor alle motorvoertuigen (auto\'s, motoren, bromfietsen).',
+                article: 'RVV 1990: Motorvoertuigen mogen hier niet rijden'
+            },
+            'D1': {
+                description: 'Rotonde - u moet verplicht de rijrichting volgen zoals aangegeven (tegen de klok in).',
+                article: 'RVV 1990: Verplichte rijrichting op rotondes'
+            },
+            'E1': {
+                description: 'Parkeren is hier verboden. Wel mag u stoppen om iemand in of uit te laten stappen of om te laden/lossen.',
+                article: 'RVV 1990, Artikel 24: Parkeerverbod geldt niet voor onmiddellijk laden/lossen'
+            },
+            'E2': {
+                description: 'Stilstaan is hier verboden. U mag hier noch parkeren, noch stoppen.',
+                article: 'RVV 1990, Artikel 23: Stilstaanverbod - zelfs niet voor kort stoppen'
+            },
+            'E4': {
+                description: 'Dit is een parkeergelegenheid waar u uw voertuig mag parkeren.',
+                article: 'RVV 1990: Aangewezen parkeerplaats'
+            },
+            'G1': {
+                description: 'Begin van een autosnelweg. Speciale regels gelden: minimumsnelheid 60 km/u, niet keren, niet achteruit rijden.',
+                article: 'RVV 1990: Autosnelweg - maximaal 130 km/u (of zoals aangegeven)'
+            },
+            'G3': {
+                description: 'Begin van een autoweg. Gesloten voor bromfietsen, snorfietsen, voetgangers en landbouwvoertuigen.',
+                article: 'RVV 1990: Autoweg - maximaal 100 km/u buiten bebouwde kom'
+            },
+            'G5': {
+                description: 'Begin van een erf. Voetgangers hebben voorrang, maximumsnelheid 15 km/u.',
+                article: 'RVV 1990: Erf - stapvoets rijden, voetgangers mogen overal lopen'
+            },
+            'G11': {
+                description: 'Verplicht fietspad. Fietsers en snorfietsers moeten dit pad gebruiken.',
+                article: 'RVV 1990, Artikel 5: Verplicht gebruik fietspad voor fietsers'
+            },
+            'H1': {
+                description: 'Begin bebouwde kom. Maximumsnelheid 50 km/u tenzij anders aangegeven.',
+                article: 'RVV 1990, Artikel 20: Binnen bebouwde kom geldt 50 km/u voor motorvoertuigen'
+            },
+            'J10': {
+                description: 'Waarschuwing voor een overweg met slagbomen. Wacht voor de gesloten slagbomen.',
+                article: 'RVV 1990, Artikel 15a: Bij overwegen spoorvoertuigen laten voorgaan'
+            },
+            'J21': {
+                description: 'Let op! Kinderen kunnen hier plotseling de weg oversteken (bijv. bij scholen, speelplaatsen).',
+                article: 'RVV 1990: Waarschuwingsbord - extra oplettendheid vereist'
+            }
         };
+
+        // Traffic rules quiz questions (NEW)
+        const trafficRulesQuestions = [
+            {
+                type: 'rules',
+                question: 'Wat is de maximumsnelheid binnen de bebouwde kom?',
+                options: ['30 km/u', '50 km/u', '60 km/u', '80 km/u'],
+                correct: 1,
+                explanation: 'RVV 1990 Artikel 20: Binnen de bebouwde kom geldt 50 km/u voor motorvoertuigen, tenzij anders aangegeven.'
+            },
+            {
+                type: 'rules',
+                question: 'Wat is de maximumsnelheid buiten de bebouwde kom op een gewone weg?',
+                options: ['60 km/u', '80 km/u', '100 km/u', '120 km/u'],
+                correct: 1,
+                explanation: 'RVV 1990 Artikel 21: Buiten de bebouwde kom geldt 80 km/u op gewone wegen.'
+            },
+            {
+                type: 'rules',
+                question: 'Wat is de maximumsnelheid op een autosnelweg?',
+                options: ['100 km/u', '120 km/u', '130 km/u', '140 km/u'],
+                correct: 2,
+                explanation: 'RVV 1990 Artikel 21: Op autosnelwegen geldt 130 km/u (tenzij anders aangegeven).'
+            },
+            {
+                type: 'rules',
+                question: 'Wat is de maximumsnelheid op een autoweg buiten de bebouwde kom?',
+                options: ['80 km/u', '100 km/u', '120 km/u', '130 km/u'],
+                correct: 1,
+                explanation: 'RVV 1990 Artikel 21: Op autowegen buiten de bebouwde kom geldt 100 km/u.'
+            },
+            {
+                type: 'rules',
+                question: 'Op een kruispunt zonder borden: wie heeft voorrang?',
+                options: ['Verkeer van links', 'Verkeer van rechts', 'Wie als eerste kwam', 'Snelste voertuig'],
+                correct: 1,
+                explanation: 'RVV 1990 Artikel 15: Op kruispunten verlenen bestuurders voorrang aan van rechts komende bestuurders.'
+            },
+            {
+                type: 'rules',
+                question: 'Wat moet u doen bij een stopbord (B7)?',
+                options: ['Vaart minderen', 'Alleen stoppen als er verkeer is', 'Altijd volledig stoppen', 'Doorrijden met voorrang'],
+                correct: 2,
+                explanation: 'RVV 1990 Artikel 15: Bij bord B7 moet u altijd volledig stoppen, ook als er geen verkeer is.'
+            },
+            {
+                type: 'rules',
+                question: 'Welke afstand moet u kunnen overzien om veilig te stoppen?',
+                options: ['10 meter', '20 meter', 'Zover als u de weg vrij kunt zien', '100 meter'],
+                correct: 2,
+                explanation: 'RVV 1990 Artikel 19: De bestuurder moet in staat zijn zijn voertuig tot stilstand te brengen binnen de afstand waarover hij de weg kan overzien en waarover deze vrij is.'
+            },
+            {
+                type: 'rules',
+                question: 'Mag u parkeren bij een kruispunt?',
+                options: ['Ja, altijd', 'Ja, op minimaal 5 meter afstand', 'Nee, nooit', 'Alleen overdag'],
+                correct: 1,
+                explanation: 'RVV 1990 Artikel 24: Bij een kruispunt mag u pas parkeren op een afstand van minimaal 5 meter.'
+            },
+            {
+                type: 'rules',
+                question: 'Wat is het verschil tussen parkeren en stilstaan?',
+                options: ['Geen verschil', 'Stilstaan is korter dan parkeren', 'Parkeren is langer dan in-/uitstappen of laden/lossen', 'Stilstaan mag alleen met motor uit'],
+                correct: 2,
+                explanation: 'RVV 1990 Artikel 1: Parkeren is langer stilstaan dan de tijd nodig voor in-/uitstappen of laden/lossen.'
+            },
+            {
+                type: 'rules',
+                question: 'Waar moeten fietsers rijden?',
+                options: ['Altijd op de rijbaan', 'Op het verplichte fietspad of fiets/bromfietspad', 'Waar ze willen', 'Op het trottoir'],
+                correct: 1,
+                explanation: 'RVV 1990 Artikel 5: Fietsers gebruiken het verplichte fietspad of het fiets/bromfietspad.'
+            },
+            {
+                type: 'rules',
+                question: 'Mogen fietsers naast elkaar rijden?',
+                options: ['Nee, nooit', 'Ja, met maximaal twee naast elkaar', 'Ja, met maximaal drie naast elkaar', 'Alleen op fietspaden'],
+                correct: 1,
+                explanation: 'RVV 1990 Artikel 3: Fietsers mogen met zijn tweeën naast elkaar rijden.'
+            },
+            {
+                type: 'rules',
+                question: 'Waar moeten bromfietsers rijden?',
+                options: ['Op het fietspad', 'Op de rijbaan', 'Op het fiets/bromfietspad', 'Op het trottoir'],
+                correct: 2,
+                explanation: 'RVV 1990 Artikel 6: Bromfietsers gebruiken het fiets/bromfietspad.'
+            },
+            {
+                type: 'rules',
+                question: 'Wanneer moet u dimlicht voeren op een auto?',
+                options: ['Alleen bij nacht', 'Bij dag en nacht', 'Bij slecht zicht en bij nacht', 'Alleen in de winter'],
+                correct: 2,
+                explanation: 'RVV 1990 Artikel 32: Bij dag indien het zicht ernstig wordt belemmerd, en bij nacht moet dimlicht worden gevoerd.'
+            },
+            {
+                type: 'rules',
+                question: 'Mag u een militaire colonne doorsnijden?',
+                options: ['Ja, altijd', 'Nee, nooit', 'Alleen bij files', 'Alleen op autowegen'],
+                correct: 1,
+                explanation: 'RVV 1990 Artikel 16: Weggebruikers mogen militaire colonnes en uitvaartstoeten niet doorsnijden.'
+            },
+            {
+                type: 'rules',
+                question: 'Wanneer mag u uw claxon gebruiken?',
+                options: ['Om te groeten', 'Bij ergernis', 'Ter afwending van dreigend gevaar', 'Altijd wanneer u wilt'],
+                correct: 2,
+                explanation: 'RVV 1990 Artikel 28: Bestuurders mogen slechts geluidssignalen geven ter afwending van dreigend gevaar.'
+            },
+            {
+                type: 'rules',
+                question: 'Mag u een voertuig inhalen vlak voor een zebrapad?',
+                options: ['Ja, als er geen voetgangers zijn', 'Nee, dat is verboden', 'Alleen fietsers', 'Alleen langzaam verkeer'],
+                correct: 1,
+                explanation: 'RVV 1990 Artikel 12: Het is verboden een voertuig vlak voor of op een voetgangersoversteekplaats in te halen.'
+            },
+            {
+                type: 'rules',
+                question: 'Welke maximumsnelheid geldt op een erf?',
+                options: ['15 km/u', '30 km/u', '50 km/u', 'Stapvoets (ongeveer 5 km/u)'],
+                correct: 0,
+                explanation: 'Op een erf (bord G5) geldt stapvoets rijden, wat ongeveer 15 km/u betekent. Voetgangers mogen overal lopen.'
+            },
+            {
+                type: 'rules',
+                question: 'Wat moet u doen bij een overweg zonder slagbomen?',
+                options: ['Doorrijden zonder stoppen', 'Altijd stoppen', 'Spoorvoertuig laten voorgaan en overweg vrijhouden', 'Claxonneren'],
+                correct: 2,
+                explanation: 'RVV 1990 Artikel 15a: Bij overwegen laten weggebruikers een spoorvoertuig voorgaan en laten daarbij de overweg geheel vrij.'
+            },
+            {
+                type: 'rules',
+                question: 'Mag u dubbel parkeren?',
+                options: ['Ja, als het kort is', 'Ja, met motor uit', 'Nee, dat is verboden', 'Alleen met gevaar driehoek'],
+                correct: 2,
+                explanation: 'RVV 1990 Artikel 24: De bestuurder mag zijn voertuig niet dubbel parkeren.'
+            },
+            {
+                type: 'rules',
+                question: 'Hoe moet u afslaan naar links op een kruispunt?',
+                options: ['Meteen afslaan', 'Tegemoetkomend verkeer laten voorgaan', 'Claxonneren en dan afslaan', 'Voorrang hebben'],
+                correct: 1,
+                explanation: 'RVV 1990 Artikel 18: Bestuurders die afslaan moeten verkeer dat tegemoet komt of naast hen is, laten voorgaan.'
+            }
+        ];
 
         // Load data from JSON file
         async function loadData() {
@@ -708,7 +809,7 @@
                 const response = await fetch('verkeersborden_officieel.json');
                 const data = await response.json();
 
-                // Add image URLs to signs data (use local images)
+                // Add image URLs to signs data
                 allSigns = data.borden.map(sign => ({
                     ...sign,
                     imageUrl: `images/${sign.code}.png`
@@ -802,7 +903,7 @@
             updateStats();
         }
 
-        // Display signs in grid
+        // Display signs in grid with hover tooltips
         function displaySigns() {
             const grid = document.getElementById('signsGrid');
 
@@ -812,7 +913,7 @@
             }
 
             grid.innerHTML = filteredSigns.map(sign => `
-                <div class="sign-card">
+                <div class="sign-card" onmouseenter="showTooltip(event, '${sign.code}')" onmouseleave="hideTooltip()">
                     <div class="sign-image-container">
                         ${sign.imageUrl ?
                             `<img src="${sign.imageUrl}" alt="${sign.omschrijving}" class="sign-image" onerror="this.parentElement.innerHTML='<div class=\\'no-image\\'>Afbeelding niet beschikbaar</div>'">` :
@@ -824,6 +925,50 @@
                     <div class="sign-category">${sign.hoofdstuk}</div>
                 </div>
             `).join('');
+        }
+
+        // Show tooltip with comprehensive explanation
+        function showTooltip(event, code) {
+            const rect = event.currentTarget.getBoundingClientRect();
+            const sign = allSigns.find(s => s.code === code);
+            const explanation = signExplanations[code];
+
+            if (!sign) return;
+
+            let tooltipContent = `
+                <div class="tooltip-title">${sign.code}: ${sign.omschrijving}</div>
+                <div class="tooltip-description">
+                    ${explanation ? explanation.description : 'Dit verkeersbord is onderdeel van het officiele RVV 1990 reglement.'}
+                </div>
+            `;
+
+            if (explanation && explanation.article) {
+                tooltipContent += `<div class="tooltip-article">${explanation.article}</div>`;
+            }
+
+            tooltip.innerHTML = tooltipContent;
+            tooltip.classList.add('show');
+
+            // Position tooltip
+            const tooltipRect = tooltip.getBoundingClientRect();
+            let left = rect.left + rect.width / 2 - tooltipRect.width / 2;
+            let top = rect.top - tooltipRect.height - 10;
+
+            // Keep tooltip on screen
+            if (left < 10) left = 10;
+            if (left + tooltipRect.width > window.innerWidth - 10) {
+                left = window.innerWidth - tooltipRect.width - 10;
+            }
+            if (top < 10) {
+                top = rect.bottom + 10;
+            }
+
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + window.scrollY + 'px';
+        }
+
+        function hideTooltip() {
+            tooltip.classList.remove('show');
         }
 
         // Update statistics
@@ -853,9 +998,9 @@
             }
         }
 
-        // Quiz functionality
+        // Quiz functionality - ENHANCED with traffic rules
         function startQuiz() {
-            // Only use signs that have images
+            // Mix sign recognition and traffic rules questions
             const signsWithImages = allSigns.filter(sign => sign.imageUrl);
 
             if (signsWithImages.length < 4) {
@@ -863,10 +1008,19 @@
                 return;
             }
 
-            // Select 10 random signs for quiz
-            quizQuestions = [];
-            const shuffled = [...signsWithImages].sort(() => Math.random() - 0.5);
-            quizQuestions = shuffled.slice(0, Math.min(10, signsWithImages.length));
+            // Select 8 random sign questions
+            const shuffledSigns = [...signsWithImages].sort(() => Math.random() - 0.5);
+            const signQuestions = shuffledSigns.slice(0, 8).map(sign => ({
+                type: 'sign',
+                sign: sign
+            }));
+
+            // Select 7 random traffic rules questions
+            const shuffledRules = [...trafficRulesQuestions].sort(() => Math.random() - 0.5);
+            const rulesQuestions = shuffledRules.slice(0, 7);
+
+            // Combine and shuffle all questions
+            quizQuestions = [...signQuestions, ...rulesQuestions].sort(() => Math.random() - 0.5);
 
             currentQuestionIndex = 0;
             quizScore = 0;
@@ -884,7 +1038,7 @@
             }
 
             answeredCorrectly = false;
-            const currentSign = quizQuestions[currentQuestionIndex];
+            const currentQuestion = quizQuestions[currentQuestionIndex];
 
             // Update progress
             document.getElementById('quizCounter').textContent =
@@ -892,52 +1046,110 @@
             document.getElementById('quizScore').textContent =
                 `Score: ${quizScore}/${currentQuestionIndex}`;
 
-            // Show image
-            document.getElementById('quizImage').src = currentSign.imageUrl;
+            const questionText = document.getElementById('questionText');
+            const imageContainer = document.getElementById('quizImageContainer');
+            const quizImage = document.getElementById('quizImage');
 
-            // Create options
-            const options = generateOptions(currentSign);
-            const optionsContainer = document.getElementById('quizOptions');
+            if (currentQuestion.type === 'sign') {
+                // Sign recognition question
+                questionText.textContent = 'Wat betekent dit verkeersbord?';
+                imageContainer.style.display = 'flex';
+                quizImage.src = currentQuestion.sign.imageUrl;
 
-            optionsContainer.innerHTML = options.map((option, index) => `
-                <button class="quiz-option" onclick="selectAnswer(${index})" data-correct="${option.code === currentSign.code}">
-                    <strong>${option.code}</strong> - ${option.omschrijving}
-                </button>
-            `).join('');
+                // Create options
+                const options = generateSignOptions(currentQuestion.sign);
+                displayOptions(options, currentQuestion.sign.omschrijving);
+            } else {
+                // Traffic rules question
+                questionText.textContent = currentQuestion.question;
+                imageContainer.style.display = 'none';
+
+                // Display text options
+                displayTextOptions(currentQuestion.options, currentQuestion.correct);
+            }
 
             document.getElementById('quizNextBtn').disabled = true;
         }
 
-        function generateOptions(correctSign) {
-            const options = [correctSign];
-            const signsWithImages = allSigns.filter(sign =>
+        function generateSignOptions(correctSign) {
+            const options = [correctSign.omschrijving];
+            const otherSigns = allSigns.filter(sign =>
                 sign.imageUrl && sign.code !== correctSign.code
             );
 
             // Add 3 random wrong answers
-            const shuffled = [...signsWithImages].sort(() => Math.random() - 0.5);
-            options.push(...shuffled.slice(0, 3));
+            const shuffled = [...otherSigns].sort(() => Math.random() - 0.5);
+            options.push(...shuffled.slice(0, 3).map(s => s.omschrijving));
 
             // Shuffle options
             return options.sort(() => Math.random() - 0.5);
         }
 
-        function selectAnswer(index) {
+        function displayOptions(options, correctAnswer) {
+            const optionsContainer = document.getElementById('quizOptions');
+
+            optionsContainer.innerHTML = options.map((option, index) => `
+                <button class="quiz-option" onclick="selectSignAnswer(this, '${correctAnswer}')" data-answer="${option}">
+                    ${option}
+                </button>
+            `).join('');
+        }
+
+        function displayTextOptions(options, correctIndex) {
+            const optionsContainer = document.getElementById('quizOptions');
+
+            optionsContainer.innerHTML = options.map((option, index) => `
+                <button class="quiz-option" onclick="selectRulesAnswer(this, ${correctIndex})" data-index="${index}">
+                    ${option}
+                </button>
+            `).join('');
+        }
+
+        function selectSignAnswer(element, correctAnswer) {
             const options = document.querySelectorAll('.quiz-option');
-            const selectedOption = options[index];
-            const isCorrect = selectedOption.getAttribute('data-correct') === 'true';
+            const selectedAnswer = element.getAttribute('data-answer');
+            const isCorrect = selectedAnswer === correctAnswer;
 
             // Disable all options
             options.forEach(opt => {
                 opt.classList.add('disabled');
-                if (opt.getAttribute('data-correct') === 'true') {
+                if (opt.getAttribute('data-answer') === correctAnswer) {
                     opt.classList.add('correct');
                 }
             });
 
             // Mark selected answer
             if (!isCorrect) {
-                selectedOption.classList.add('incorrect');
+                element.classList.add('incorrect');
+            } else if (!answeredCorrectly) {
+                quizScore++;
+                answeredCorrectly = true;
+            }
+
+            // Enable next button
+            document.getElementById('quizNextBtn').disabled = false;
+
+            // Update score display
+            document.getElementById('quizScore').textContent =
+                `Score: ${quizScore}/${currentQuestionIndex + 1}`;
+        }
+
+        function selectRulesAnswer(element, correctIndex) {
+            const options = document.querySelectorAll('.quiz-option');
+            const selectedIndex = parseInt(element.getAttribute('data-index'));
+            const isCorrect = selectedIndex === correctIndex;
+
+            // Disable all options
+            options.forEach((opt, idx) => {
+                opt.classList.add('disabled');
+                if (idx === correctIndex) {
+                    opt.classList.add('correct');
+                }
+            });
+
+            // Mark selected answer
+            if (!isCorrect) {
+                element.classList.add('incorrect');
             } else if (!answeredCorrectly) {
                 quizScore++;
                 answeredCorrectly = true;
@@ -966,13 +1178,15 @@
 
             let message = '';
             if (percentage >= 90) {
-                message = 'Uitstekend! Je kent de verkeersborden zeer goed!';
+                message = 'Uitstekend! Je bent klaar voor het CBR-theorie-examen!';
+            } else if (percentage >= 80) {
+                message = 'Zeer goed! Je kent de verkeersregels goed!';
             } else if (percentage >= 70) {
-                message = 'Goed gedaan! Je bent goed op weg!';
-            } else if (percentage >= 50) {
-                message = 'Niet slecht, maar er is ruimte voor verbetering.';
+                message = 'Goed gedaan! Blijf oefenen voor een perfecte score!';
+            } else if (percentage >= 60) {
+                message = 'Redelijk, maar er is ruimte voor verbetering.';
             } else {
-                message = 'Blijf oefenen! Je kunt het!';
+                message = 'Blijf oefenen! Lees de verkeersborden en regels nog eens goed door.';
             }
 
             document.getElementById('resultMessage').textContent = message;
@@ -980,6 +1194,9 @@
 
         // Initialize app
         loadData();
+
+        // Hide tooltip on scroll
+        window.addEventListener('scroll', hideTooltip);
     </script>
 </body>
 </html>
